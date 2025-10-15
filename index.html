@@ -3,227 +3,325 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>🎆 Diwali Celebration 2025</title>
+  <title>✨ Khajavali ❤️ Riya — Happy Diwali 2025 ✨</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
 
   <style>
-    * {margin: 0; padding: 0; box-sizing: border-box;}
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(to top, #0d0d0d, #3b1c00);
-      color: #fff;
-      height: 100vh;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
-      text-align: center;
-      position: relative;
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{
+      font-family:'Poppins',sans-serif;
+      background:radial-gradient(circle at 50% 80%,#1a0b00 0%,#0d0d0d 100%);
+      overflow:hidden;
+      height:100vh;
+      color:#fff;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      text-align:center;
     }
 
-    /* ---------------- Header Text ---------------- */
-    h1 {
-      font-size: 3rem;
-      color: #ffcc33;
-      text-shadow: 0 0 25px #ff9900;
-      animation: glowText 2s infinite alternate;
-      margin-top: 40px;
+    h1{
+      font-size:3rem;
+      margin-top:30px;
+      color:#ffcc33;
+      text-shadow:0 0 25px #ff9900;
+      animation:glowText 2s infinite alternate;
+    }
+    @keyframes glowText{
+      0%{text-shadow:0 0 10px #ff6600;}
+      100%{text-shadow:0 0 35px #ffcc33;}
     }
 
-    @keyframes glowText {
-      from { text-shadow: 0 0 15px #ff9900; }
-      to { text-shadow: 0 0 35px #ffcc33; }
+    .floating-name{
+      position:absolute;
+      top:110px;
+      font-size:2.2rem;
+      color:#fff3a3;
+      font-weight:600;
+      animation:floatName 5s ease-in-out infinite alternate;
+      text-shadow:0 0 30px #ff6600;
+    }
+    @keyframes floatName{
+      0%{transform:translateY(0);}
+      100%{transform:translateY(-20px);}
     }
 
-    p.subtitle {
+    .love-quote {
       font-size: 1.3rem;
-      margin: 15px auto 10px;
       max-width: 700px;
-      color: #fff3d1;
+      margin-top: 180px;
+      color: #ffdca8;
+      font-style: italic;
+      line-height: 1.6;
+      text-shadow: 0 0 10px #ff6600;
+      animation: quoteFade 4s ease-in-out infinite alternate;
+    }
+    @keyframes quoteFade {
+      0% { opacity: 0.8; transform: scale(1); }
+      100% { opacity: 1; transform: scale(1.05); }
     }
 
-    /* ---------------- Countdown ---------------- */
-    #countdown {
-      font-size: 1.1rem;
-      color: #ffcc33;
-      margin-bottom: 20px;
-      background: rgba(255, 204, 51, 0.1);
-      padding: 8px 20px;
-      border-radius: 20px;
-      border: 1px solid #ffcc33;
+    /* Lights */
+    .light-string{
+      position:absolute;top:0;width:100%;display:flex;justify-content:space-around;pointer-events:none;z-index:3;
+    }
+    .light-bulb{width:15px;height:15px;border-radius:50%;background:#ff6600;box-shadow:0 0 15px #ff6600;animation:blink 1.5s infinite alternate;}
+    .light-bulb:nth-child(even){background:#ffcc33;box-shadow:0 0 15px #ffcc33;animation-delay:.5s;}
+    @keyframes blink{0%{opacity:0.6;transform:scale(1);}100%{opacity:1;transform:scale(1.4);}}
+
+    /* Diyas */
+    .diyas{display:flex;justify-content:center;gap:40px;position:absolute;bottom:180px;width:100%;}
+    .diya{width:90px;height:90px;background:radial-gradient(circle,#ff6600 20%,#cc3300 80%);border-radius:50% 50% 0 0;position:relative;box-shadow:0 0 25px #ff6600;}
+    .flame{position:absolute;top:-45px;left:50%;transform:translateX(-50%);width:25px;height:50px;background:radial-gradient(circle,#fff700 0%,#ff6600 70%);border-radius:50%;box-shadow:0 0 25px #ffcc33;animation:flicker 1.5s infinite alternate;}
+    @keyframes flicker{0%{transform:translateX(-50%) scale(1);opacity:0.8;}100%{transform:translateX(-50%) scale(1.2);opacity:1;}}
+
+    /* Runner Characters */
+    .runner{
+      position:absolute;
+      bottom:210px;
+      width:80px;height:160px;
+      display:flex;flex-direction:column;align-items:center;
+      animation-timing-function: linear;
+    }
+    .runner .head{width:40px;height:40px;background:#ffcc99;border-radius:50%;border:2px solid #d9a060;}
+    .runner .body{width:45px;height:80px;background:linear-gradient(to bottom,#ff6600,#a84300);border-radius:20px;margin-top:5px;}
+    .runner .legs{display:flex;gap:5px;margin-top:5px;}
+    .runner .leg{width:15px;height:35px;background:#3b3b3b;border-radius:5px;}
+
+    /* Khajavali from left */
+    #khajavali{
+      left:-150px;
+      animation:runLeftToCenter 8s forwards;
+    }
+    @keyframes runLeftToCenter{
+      0%{transform:translateX(0);}
+      100%{transform:translateX(650px);}
     }
 
-    /* ---------------- Light String ---------------- */
-    .light-string {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100px;
-      display: flex;
-      justify-content: space-evenly;
-      pointer-events: none;
-    }
-
-    .light-bulb {
-      width: 15px;
-      height: 15px;
-      border-radius: 50%;
-      background: #ff6600;
-      box-shadow: 0 0 15px #ff6600;
-      animation: blink 1.5s infinite alternate;
-    }
-
-    .light-bulb:nth-child(even) {
-      background: #ffcc33;
-      box-shadow: 0 0 15px #ffcc33;
+    /* Riya from right */
+    #riya{
+      right:-150px;
+      animation:runRightToCenter 8s forwards;
       animation-delay: 0.5s;
     }
-
-    @keyframes blink {
-      0% {opacity: 0.6; transform: scale(1);}
-      100% {opacity: 1; transform: scale(1.4);}
+    @keyframes runRightToCenter{
+      0%{transform:translateX(0);}
+      100%{transform:translateX(-650px);}
     }
 
-    /* ---------------- Diyas ---------------- */
-    .diyas {
-      display: flex;
-      justify-content: center;
-      gap: 25px;
-      margin-top: 40px;
-      flex-wrap: wrap;
-    }
-
-    .diya {
-      width: 90px;
-      height: 90px;
-      background: radial-gradient(circle, #ff6600 20%, #cc3300 80%);
-      border-radius: 50% 50% 0 0;
-      position: relative;
-      box-shadow: 0 0 25px #ff6600;
-    }
-
-    .flame {
+    /* ❤️ Heart */
+    .heart {
       position: absolute;
-      top: -45px;
+      bottom: 340px;
       left: 50%;
-      transform: translateX(-50%);
-      width: 25px;
-      height: 50px;
-      background: radial-gradient(circle, #fff700 0%, #ff6600 70%);
-      border-radius: 50%;
-      box-shadow: 0 0 25px #ffcc33;
-      animation: flicker 1.5s infinite alternate;
+      transform: translateX(-50%) scale(0);
+      width: 120px;
+      height: 120px;
+      background: red;
+      clip-path: polygon(50% 0%, 100% 35%, 80% 100%, 20% 100%, 0% 35%);
+      box-shadow: 0 0 40px red;
+      opacity: 0;
+      animation: showHeart 2s ease-out 8s forwards, heartbeat 2s ease-in-out infinite 10s;
+    }
+    @keyframes showHeart{0%{transform:translateX(-50%) scale(0);opacity:0;}100%{transform:translateX(-50%) scale(1);opacity:1;}}
+    @keyframes heartbeat{
+      0%,100%{transform:translateX(-50%) scale(1);}
+      50%{transform:translateX(-50%) scale(1.2);}
     }
 
-    @keyframes flicker {
-      0% { transform: translateX(-50%) scale(1); opacity: 0.8; }
-      100% { transform: translateX(-50%) scale(1.2); opacity: 1; }
+    .together-text{
+      position:absolute;
+      bottom:280px;
+      left:50%;
+      transform:translateX(-50%);
+      font-size:2rem;
+      color:#ffdca8;
+      opacity:0;
+      text-shadow:0 0 20px #ff6600;
+      animation:fadeIn 2s ease-out 10s forwards, pulseText 3s infinite ease-in-out 12s;
     }
+    @keyframes fadeIn{0%{opacity:0;}100%{opacity:1;}}
+    @keyframes pulseText{0%,100%{text-shadow:0 0 10px #ff6600;}50%{text-shadow:0 0 30px #ffcc33;}}
 
-    /* ---------------- Rangoli ---------------- */
-    .rangoli {
-      width: 220px;
-      height: 220px;
-      background: radial-gradient(circle, #ffcc33 15%, #ff6600 40%, #800000 90%);
-      border-radius: 50%;
-      margin-top: 40px;
-      position: relative;
-      animation: pulse 2.5s infinite alternate;
-      box-shadow: 0 0 40px #ff6600;
+    /* Rangoli */
+    .rangoli{
+      position:absolute;bottom:110px;width:300px;height:300px;
+      background:radial-gradient(circle,#ffcc33 15%,#ff6600 40%,#800000 90%);
+      border-radius:50%;animation:pulse 2.5s infinite alternate;box-shadow:0 0 40px #ff6600;
     }
+    @keyframes pulse{0%{transform:scale(1);}100%{transform:scale(1.1);}}
 
-    .rangoli::before {
-      content: '';
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      width: 100px; height: 100px;
-      background: #ffcc33;
-      border-radius: 50%;
-      box-shadow: 0 0 25px #ffcc33;
-    }
+    .particle{position:absolute;width:8px;height:8px;background:radial-gradient(circle,#ffcc33,#ff6600);border-radius:50%;opacity:0.8;animation:floatUp 6s linear infinite;}
+    @keyframes floatUp{0%{transform:translateY(100vh) scale(0.5);opacity:0.7;}50%{opacity:1;}100%{transform:translateY(-50px) scale(1.2);opacity:0;}}
 
-    @keyframes pulse {
-      0% { transform: scale(1); opacity: 0.9; }
-      100% { transform: scale(1.1); opacity: 1; }
-    }
+    .firework{position:absolute;width:5px;height:5px;background:#fff;border-radius:50%;animation:explode 2s ease-in-out infinite;}
+    @keyframes explode{0%{transform:scale(0);opacity:1;}50%{transform:scale(3);opacity:0.8;}100%{transform:scale(0);opacity:0;}}
+    .firework:nth-child(1){top:15%;left:20%;}
+    .firework:nth-child(2){top:10%;left:70%;animation-delay:.5s;}
+    .firework:nth-child(3){top:25%;left:50%;animation-delay:1s;}
+    .firework:nth-child(4){top:18%;left:85%;animation-delay:1.5s;}
+    .firework:nth-child(5){top:20%;left:35%;animation-delay:2s;}
+    .firework:nth-child(6){top:30%;left:60%;animation-delay:2.5s;}
+    .firework:nth-child(7){top:12%;left:45%;animation-delay:3s;}
 
-    /* ---------------- Floating Sparkles ---------------- */
-    .particle {
-      position: absolute;
-      width: 8px;
-      height: 8px;
-      background: radial-gradient(circle, #ffcc33, #ff6600);
-      border-radius: 50%;
-      opacity: 0.8;
-      animation: floatUp 6s linear infinite;
-    }
+    .lantern{position:absolute;top:10%;width:40px;height:60px;background:linear-gradient(to bottom,#ff6600,#ffcc33);border-radius:20px;animation:floatLantern 10s ease-in-out infinite alternate;box-shadow:0 0 20px #ff6600;}
+    .lantern::before{content:'';position:absolute;top:-10px;left:50%;transform:translateX(-50%);width:4px;height:10px;background:#d9d9d9;}
+    @keyframes floatLantern{0%{transform:translateY(0);}100%{transform:translateY(-30px);}}
 
-    @keyframes floatUp {
-      0% { transform: translateY(100vh) scale(0.5); opacity: 0.7; }
-      50% { opacity: 1; }
-      100% { transform: translateY(-50px) scale(1.2); opacity: 0; }
-    }
+    .ground{position:absolute;bottom:0;width:100%;height:200px;background:linear-gradient(to top,#1b0e00,#3d2400);border-top:2px solid #ffcc33;}
 
-    /* ---------------- Fireworks ---------------- */
-    .firework {
-      position: absolute;
-      width: 5px;
-      height: 5px;
-      background: #fff;
-      border-radius: 50%;
-      animation: explode 2s ease-in-out infinite;
-    }
-
-    @keyframes explode {
-      0% { transform: scale(0); opacity: 1; }
-      50% { transform: scale(3); opacity: 0.8; }
-      100% { transform: scale(0); opacity: 0; }
-    }
-
-    .firework:nth-child(1) { top: 15%; left: 20%; animation-delay: 0s; }
-    .firework:nth-child(2) { top: 10%; left: 70%; animation-delay: 0.5s; }
-    .firework:nth-child(3) { top: 25%; left: 50%; animation-delay: 1s; }
-    .firework:nth-child(4) { top: 18%; left: 85%; animation-delay: 1.5s; }
-    .firework:nth-child(5) { top: 20%; left: 35%; animation-delay: 2s; }
-
-    /* ---------------- Music Button ---------------- */
-    .music-btn {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #ff6600;
-      color: white;
-      padding: 12px 18px;
-      border-radius: 30px;
-      cursor: pointer;
-      font-size: 0.9rem;
-      box-shadow: 0 0 20px #ff6600;
-      border: none;
-    }
-
-    .music-btn:hover {
-      background: #ff8533;
-      box-shadow: 0 0 30px #ff8533;
-    }
+    .music-btn{position:fixed;bottom:20px;right:20px;background:#ff6600;color:white;padding:12px 18px;border-radius:30px;cursor:pointer;font-size:.9rem;box-shadow:0 0 20px #ff6600;border:none;z-index:999;}
+    .music-btn:hover{background:#ff8533;box-shadow:0 0 30px #ff8533;}
   </style>
 </head>
 <body>
-
-  <!-- Header -->
+  
   <h1>🪔 Happy Diwali 2025 🪔</h1>
-  <p class="subtitle">May the festival of lights bring joy, prosperity, and happiness to your home.</p>
-  <div id="countdown"></div>
+  <div class="floating-name">✨ Khajavali ❤️ Riya ✨</div>
 
-  <!-- Light Decoration -->
+  <div class="love-quote">
+    “Riya — You are God’s gift to me.  
+    Don’t ever leave me.  
+    My every heartbeat and every drop of blood whispers your name.  
+    It’s always… only you, Riya ❤️”
+  </div>
+
+  <!-- ✨ Running Scene -->
+  <!-- 🏃 Khajavali Runner -->
+<div class="runner" id="khajavali">
+  <div class="head"></div>
+  <div class="body"></div>
+  <div class="legs"><div class="leg"></div><div class="leg"></div></div>
+</div>
+
+<!-- 🏃‍♀️ Riya Runner -->
+<div class="runner" id="riya">
+  <div class="head"></div>
+  <div class="body female"></div>
+  <div class="legs"><div class="leg"></div><div class="leg"></div></div>
+</div>
+
+<!-- 💬 Conversation Bubbles -->
+<div class="chat-bubble riya-bubble1">I love you Khaja ❤️</div>
+<div class="chat-bubble khaja-bubble1">Love you too Riya 💖</div>
+<div class="chat-bubble riya-bubble2">You ran so slow 😜</div>
+<div class="chat-bubble khaja-bubble2">Because I didn’t want this moment to end 😘</div>
+<div class="chat-bubble riya-bubble3">Ayy… you and your lines 😅</div>
+<div class="chat-bubble khaja-bubble3">Only for you Riya, always for you 🫶</div>
+<div class="chat-bubble riya-bubble4">What if I run away again? 😏</div>
+<div class="chat-bubble khaja-bubble4">Then I’ll chase you forever… because you’re my forever ❤️</div>
+
+<style>
+/* 🧍 Characters */
+.runner {
+  position: absolute;
+  bottom: 210px;
+  width: 80px;
+  height: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation-timing-function: linear;
+}
+.head {
+  width: 40px;
+  height: 40px;
+  background: #ffcc99;
+  border-radius: 50%;
+  border: 2px solid #d9a060;
+}
+.body {
+  width: 45px;
+  height: 80px;
+  background: linear-gradient(to bottom, #ff6600, #a84300);
+  border-radius: 20px;
+  margin-top: 5px;
+}
+.female {
+  background: linear-gradient(to bottom, #ff0080, #800040);
+}
+.legs {
+  display: flex;
+  gap: 5px;
+  margin-top: 5px;
+}
+.leg {
+  width: 15px;
+  height: 35px;
+  background: #3b3b3b;
+  border-radius: 5px;
+}
+
+/* ✨ Runner Animations */
+#khajavali {
+  left: -100px;
+  animation: runLeft 8s forwards;
+}
+#riya {
+  right: -100px;
+  animation: runRight 8s forwards;
+  animation-delay: 0.5s;
+}
+@keyframes runLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(680px); }
+}
+@keyframes runRight {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-680px); }
+}
+
+/* 💬 Conversation Bubbles */
+.chat-bubble {
+  position: absolute;
+  bottom: 400px;
+  padding: 12px 18px;
+  background: #fff;
+  color: #000;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  max-width: 260px;
+  text-align: center;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: all 0.5s ease;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ✨ Conversation sequence */
+.riya-bubble1 { left: 55%; animation: showBubble 1s ease forwards; animation-delay: 8.5s; }
+.khaja-bubble1 { left: 40%; background:#ff4b91; color:#fff; animation: showBubble 1s ease forwards; animation-delay: 10s; }
+
+.riya-bubble2 { left: 55%; animation: showBubble 1s ease forwards; animation-delay: 12s; }
+.khaja-bubble2 { left: 40%; background:#ff4b91; color:#fff; animation: showBubble 1s ease forwards; animation-delay: 14s; }
+
+.riya-bubble3 { left: 55%; animation: showBubble 1s ease forwards; animation-delay: 16s; }
+.khaja-bubble3 { left: 40%; background:#ff4b91; color:#fff; animation: showBubble 1s ease forwards; animation-delay: 18s; }
+
+.riya-bubble4 { left: 55%; animation: showBubble 1s ease forwards; animation-delay: 20s; }
+.khaja-bubble4 { left: 40%; background:#ff4b91; color:#fff; animation: showBubble 1s ease forwards; animation-delay: 22s; }
+
+@keyframes showBubble {
+  0% { opacity: 0; transform: scale(0.5) translateY(20px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+</style>
+
+
+  <div class="runner" id="riya">
+    <div class="head"></div>
+    <div class="body" style="background:linear-gradient(to bottom,#ff0080,#800040);"></div>
+    <div class="legs"><div class="leg"></div><div class="leg"></div></div>
+  </div>
+
+  <!-- ❤️ Heart & Text -->
+  <div class="heart"></div>
+  <div class="together-text">Together Forever 💫</div>
+
   <div class="light-string" id="lightString"></div>
-
-  <!-- Rangoli -->
   <div class="rangoli"></div>
 
-  <!-- Diyas -->
   <div class="diyas">
     <div class="diya"><div class="flame"></div></div>
     <div class="diya"><div class="flame"></div></div>
@@ -232,21 +330,27 @@
     <div class="diya"><div class="flame"></div></div>
   </div>
 
-  <!-- Fireworks -->
+  <div class="firework"></div>
+  <div class="firework"></div>
   <div class="firework"></div>
   <div class="firework"></div>
   <div class="firework"></div>
   <div class="firework"></div>
   <div class="firework"></div>
 
-  <!-- Music -->
+  <div class="lantern" style="left:15%;animation-delay:1s;"></div>
+  <div class="lantern" style="left:45%;animation-delay:2s;"></div>
+  <div class="lantern" style="left:75%;animation-delay:3s;"></div>
+
+  <div class="ground"></div>
+
   <button class="music-btn" id="musicBtn">🔊 Play Music</button>
   <audio id="bgMusic" loop>
     <source src="https://cdn.pixabay.com/download/audio/2022/07/29/audio_1e1f77d66b.mp3?filename=happy-diwali-bell-music-116564.mp3" type="audio/mpeg">
   </audio>
 
   <script>
-    // 🎆 Add blinking light bulbs dynamically
+    // 💡 Light bulbs
     const lightString = document.getElementById('lightString');
     for (let i = 0; i < 25; i++) {
       const bulb = document.createElement('div');
@@ -254,8 +358,8 @@
       lightString.appendChild(bulb);
     }
 
-    // 🌸 Floating particles
-    for (let i = 0; i < 40; i++) {
+    // ✨ Floating sparkles
+    for (let i = 0; i < 60; i++) {
       const particle = document.createElement('div');
       particle.classList.add('particle');
       particle.style.left = Math.random() * 100 + 'vw';
@@ -264,31 +368,10 @@
       document.body.appendChild(particle);
     }
 
-    // 🪔 Countdown to Diwali
-    const countdownEl = document.getElementById('countdown');
-    const diwaliDate = new Date('October 20, 2025 00:00:00').getTime();
-    setInterval(() => {
-      const now = new Date().getTime();
-      const distance = diwaliDate - now;
-
-      if (distance <= 0) {
-        countdownEl.innerHTML = "🎉 Happy Diwali is Here!";
-        return;
-      }
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      countdownEl.innerHTML = `🪔 ${days} Days ${hours} Hours ${minutes} Minutes ${seconds} Seconds`;
-    }, 1000);
-
     // 🎶 Music Toggle
     const musicBtn = document.getElementById('musicBtn');
     const bgMusic = document.getElementById('bgMusic');
     let playing = false;
-
     musicBtn.addEventListener('click', () => {
       if (!playing) {
         bgMusic.play();
